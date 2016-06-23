@@ -1,0 +1,53 @@
+﻿@model EMS_PSS_Project.Models.EMS_User
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>Log In Page</h2>
+
+@using (Html.BeginForm("LogIn", "LogIn", FormMethod.Post))
+{
+    // this is for create form tag
+    @Html.AntiForgeryToken() // this is for preven CSRF attack.
+    @Html.ValidationSummary(true)
+    if (ViewBag.message != null)
+	{
+		 <div style="border:1px solid ridge">
+             @ViewBag.Message
+         </div>
+	}
+    <table>
+
+        <tr>
+            <td>@Html.LabelFor(s => s.User_Name)</td>
+            <td>@Html.TextBoxFor(s => s.User_Name)</td>
+            <td>@Html.ValidationMessageFor(s => s.User_Name)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(s => s.PassWord, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td>@Html.TextBoxFor(s => s.PassWord, new { htmlAttributes = new { @class = "form-control" } })</td>
+            <td>@Html.ValidationMessageFor(s => s.PassWord, "", new { @class = "text-danger" })</td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Login" />
+}
+    <div>
+        @using (Html.BeginForm("CreateUser", "User", FormMethod.Get))
+        {
+            <input type="submit" value="Add New User" />
+        }
+
+        @using (Html.BeginForm("Index", "User", FormMethod.Get))
+        {
+            <input type="submit" value="Search User" />
+        }
+    </div>
+
+@** This line is for create javascript section *@
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqyeryval")
+}

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Main Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main Page</title>
+</head>
+<body>
+        <div>
+            <h2>Main Page</h2>
+            @if (Session["LogedUserID"] != null)
+            {
+                using(Html.BeginForm("createlogin", "login"))
+                {
+                    <input type="submit" value="Create Employee" />
+                }
+
+                if (Session["LogedSecurityLevel"].ToString() == "1")
+                {
+                     <input type = "button" value = "Add TimeCard" />
+                     <input type = "button" value = "Seniority Report" />
+                     <input type = "button" value = "Weekly Hours Workd Report" />
+                }
+                else
+                {
+
+                }
+            }
+        </div>
+
+</body>
+</html>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqyeryval")
+    @Scripts.Render("~/bundles/jquery")
+}
+

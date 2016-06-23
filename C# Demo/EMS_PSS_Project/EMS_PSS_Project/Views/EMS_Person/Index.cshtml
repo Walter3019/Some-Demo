@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EMS_PSS_Project.Models.EMS_Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") | @Html.ActionLink("Go to main Page", "AfterLogin", "login")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Of_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Social_Insurance_Number)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Of_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Social_Insurance_Number)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Person_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Person_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Person_ID })
+        </td>
+    </tr>
+}
+
+</table>

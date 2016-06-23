@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Create Employee";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Which type Employee</title>
+</head>
+<body>
+    <div>
+        <h2>Employee</h2>
+        @if (Session["LogedUserID"] != null)
+        {
+            using (Html.BeginForm("create", "ems_person"))
+            {
+                <input type="submit" value="Create Full Time Employee" />
+            }
+
+            <input type="submit" value="Create Part Time Employee" />
+            <input type="submit" value="Create Seasonal Employee" />
+
+            if (Session["LogedSecurityLevel"].ToString() == "2")
+            {
+                <input type="button" value="Create Contract Employee" />
+            }
+            else
+            {
+
+            }
+        }
+    </div>
+
+</body>
+</html>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqyeryval")
+    @Scripts.Render("~/bundles/jquery")
+}

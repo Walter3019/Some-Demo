@@ -1,0 +1,2 @@
+E:\asql\trunk\ASQL2 Final Project\ASQL-Final-Yoyo\ASQL-Final-Yoyo\bin\Debug\ASQL-Final-Yoyo.exe.config
+E:\asql\trunk\ASQL2 Final Project\ASQL-Final-Yoyo\ASQL-Final-Yoyo\obj\Debug\ASQL-Final-Yoyo.csproj.ResolveComReference.cache

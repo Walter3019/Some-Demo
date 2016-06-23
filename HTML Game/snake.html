@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<script language="javascript">
+
+	/*
+	* Class Definition: This class is used to describe Map.
+	*/
+	function Map(){
+		this.width = 800;
+		this.height = 400;
+		this.color = '#cccccc';
+		this.position = 'absolute';
+		this._map = null; 
+		
+		/*
+		* Method Name: show()
+		* Description: this method is used to display map.
+		* Parameters: Nothing.
+		* Return: Nothing.
+		*/
+		this.show = function(){
+			this._map = document.createElement('div');		
+			
+			this._map.style.width = this.width + 'px';
+			this._map.style.height = this.height + 'px';
+			this._map.style.backgroundColor = this.color;
+			this._map.style.position = this.position;
+			
+			document.getElementsByTagName('body')[0].appendChild(this._map);
+		};	
+	}
+	
+
+
+
+	/*
+	* Class Definition: This class is used to describe Food on Map.
+	*/
+	function Food(){
+		this.width = 20;
+		this.height = 20;
+		this.color = 'green';
+		this.position = 'absolute';
+		this.x = 0;
+		this.y = 0;
+		this._food = null;
+		
+		/*
+		* Method Name: show()
+		* Description: this method is used to display Food.
+		* Parameters: Nothing.
+		* Return: Nothing.
+		*/
+		this.show = function(){
+			if(this._food == null){
+				this._food = document.createElement('div');
+				
+				this._food.style.width = this.width + 'px';
+				this._food.style.height = this.height + 'px';
+				this._food.style.backgroundColor = this.color;
+				this._food.style.position = this.position;
+				
+				map._map.appendChild(this._food);
+			}
+			
+			this.x = Math.floor(Math.random() * 40);
+			this.y = Math.floor(Math.random() * 20);
+			this._food.style.left = this.x * this.width + 'px';
+			this._food.style.top = this.y * this.height + 'px';
+		}
+	}
+	
+	
+	/*
+	* Class Definition: This class is used to describe Snake on Map.
+	*/
+	function Snake(){
+		this.width = 20;
+		this.height = 20;
+		this.direct = 'right';
+		this.position = 'absolute'
+		
+		// Using body to store snake info.
+		// body【0】 ： head of snake body[1] : body of snake body[2] : tail of snake.
+		this.body = [[4, 2, 'red', null],[3, 2, 'blue', null],[2, 2, 'blue', null]];
+		
+		
+		/*
+		* Method Name: setDirect()
+		* Description: this method is used to control direction by key.
+		* Parameters: Nothing.
+		* Return: Nothing.
+		*/
+		this.setDirect = function(code){
+			switch (code) {
+			case 37:
+				this.direct = 'left';
+				break;
+			case 38:
+				this.direct = 'up';
+				break;
+			case 39:
+				this.direct = 'right';
+				break;
+			case 40:
+				this.direct = 'down';
+				break;
+			}
+		}
+		
+		
+		/*
+		* Method Name: show()
+		* Description: this method is used to display Snake on Map.
+		* Parameters: Nothing.
+		* Return: Nothing.
+		*/
+		this.show = function(){
+			for (var i = 0; i < this.body.length; i++){
+			
+				if (this.body[i][3] == null){
+					this.body[i][3] = document.createElement('div');
+				
+					// 设置样式
+					this.body[i][3].style.width = this.width + 'px';
+					this.body[i][3].style.height = this.height + 'px';
+					this.body[i][3].style.position = this.position;
+					this.body[i][3].style.backgroundColor = this.body[i][2];
+				
+					map._map.appendChild(this.body[i][3]);
+				}
+				
+				// set snake node position.
+				this.body[i][3].style.left = this.body[i][0] * this.width + 'px';
+				this.body[i][3].style.top = this.body[i][1] * this.height + 'px';
+			}
+		};
+		
+		
+		/*
+		* Method Name: show()
+		* Description: this method is used to Move Snake on Map.
+		* Parameters: Nothing.
+		* Return: Nothing.
+		*/
+		this.move = function(){	
+			for(var i = this.body.length - 1; i > 0; i--){
+				this.body[i][0] = this.body[i - 1][0];
+				this.body[i][1] = this.body[i - 1][1];
+			}
+			
+			// check direction.
+			switch(this.direct){
+			case 'right':
+				this.body[0][0] += 1;
+				break;
+			case 'left':
+				this.body[0][0] -= 1;
+				break;
+			case 'up':
+				this.body[0][1] -= 1;
+				break;
+			case 'down':
+				this.body[0][1] += 1;
+				break;
+			}
+			
+			//snake eat food.
+			if(this.body[0][0] == food.x && this.body[0][1] == food.y){
+				// move food.
+				food.show();
+				
+				// snake node add one.
+				var length = this.body.length - 1;
+				var x = this.body[length][0];
+				var y = this.body[length][1];
+				this.body.push([x,y,'blue',null]);
+			}
+			
+			if (this.body[0][0] == 40 || this.body[0][0] == -1 || this.body[0][1] == -1 || this.body[0][1] == 20){
+				alert('Game Over');
+				clearTimeout(timer);
+				return;
+			}
+			
+			for (var i = this.body.length -1; i > 0; i--){
+				if (this.body[0][0] == this.body[i][0] && this.body[0][1] == this.body[i][1]){
+					alert('Eat yourself. Game Over.');
+					clearTimeout(timer);
+					return;
+				}
+			}
+			
+			// call show method.
+			this.show();
+		}
+	}
+	
+	var map; // 
+	var food; 
+	var snake; 
+	var timer;
+	window.onload = function() {
+		// create map instance.
+		map = new Map();
+		// call show method in Map class.
+		map.show();
+		
+		// create food instance.
+		food = new Food();
+		// call show method in Food class.
+		food.show();
+		
+		// create snake instance.
+		snake = new Snake();
+		// call show method in Snake class.
+		snake.show();
+		
+		//check keydown event.
+		document.onkeydown = function(event){
+			var code = 0;
+			if (window.event){
+				code = window.event.keyCode;
+			}else{
+				code = event.keyCode;
+			}		
+			snake.setDirect(code);
+		}
+		
+		// set time.
+		timer = setInterval("snake.move()", 300);
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

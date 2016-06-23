@@ -1,0 +1,1 @@
+E:\asql\trunk\BulkReadMsgQ\BulkReadMsgQ\bin\Debug\BulkReadMsgQ.exe.config

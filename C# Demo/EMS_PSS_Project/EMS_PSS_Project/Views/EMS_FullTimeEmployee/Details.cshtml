@@ -1,0 +1,82 @@
+﻿@model EMS_PSS_Project.Models.EMS_FullTimeEmployee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMS_FullTimeEmployee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.CompanyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Hire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Hire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Termination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Termination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason_For_Leaving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason_For_Leaving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Fulltime_Employee_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

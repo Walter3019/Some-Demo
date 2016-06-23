@@ -1,0 +1,20 @@
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\bin\Debug\SETPaint.exe.config
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.csprojResolveAssemblyReference.cache
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.MainForm.resources
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.csproj.GenerateResource.Cache
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\bin\Debug\SETPaint.exe
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\bin\Debug\SETPaint.pdb
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.Properties.Resources.resources
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.exe
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.pdb
+C:\Users\Lingchen\Desktop\SETPaint\SETPaint\obj\Debug\SETPaint.ProgramAbout.resources
+E:\Assignments\Windows Programming\SETPaint\SETPaint\bin\Debug\SETPaint.exe.config
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.exe
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.pdb
+E:\Assignments\Windows Programming\SETPaint\SETPaint\bin\Debug\SETPaint.exe
+E:\Assignments\Windows Programming\SETPaint\SETPaint\bin\Debug\SETPaint.pdb
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.csprojResolveAssemblyReference.cache
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.ProgramAbout.resources
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.MainForm.resources
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.Properties.Resources.resources
+E:\Assignments\Windows Programming\SETPaint\SETPaint\obj\Debug\SETPaint.csproj.GenerateResource.Cache
