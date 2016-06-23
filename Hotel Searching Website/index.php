@@ -361,7 +361,7 @@
 	<!-- footer -->
 	<div class="navbar navbar-inverse navbar-fixed-bottom">
 		<div class="contrainer">
-			<p class="navbar-text">Site Built By vavaqw</p>	
+			<p class="navbar-text">Site Built By Walter</p>	
 		<div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
