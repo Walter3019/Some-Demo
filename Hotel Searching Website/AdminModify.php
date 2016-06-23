@@ -205,7 +205,7 @@
 		<!-- footer -->
   <div class="navbar navbar-inverse navbar-fixed-bottom">
 	<div class="contrainer">
-		<p class="navbar-text">Site Built By vavaqw</p>	
+		<p class="navbar-text">Site Built By Walter</p>	
 	<div>
   </div>
 
